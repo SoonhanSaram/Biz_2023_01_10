@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.kyoungmin.contact.persistence.ContactDao">
+
+	<select id="selectAll" resultType="ContactDto">
+		SELECT * FROM tbl_contacts
+	</select>
+
+	<select id="create_contact_table">
+		create table if not exists tbl_contacts (
+		c_uid BIGINT
+		auto_increment primary key,
+		c_name varchar(20) not null ,
+		c_tel varchar(15) ,
+		c_email varchar(30) ,
+		c_addr varchar(125) ,
+		c_hobby varchar(125)
+		)
+	</select>
+
+	<select id="create_hobby_table">
+		create table if not exists tbl_hobbies (
+		h_id BIGINT
+		auto_increment primary key,
+		h_cuid BIGINT not null ,
+		h_name varchar(15)
+		not null
+		)
+	</select>
+</mapper> 

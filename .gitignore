@@ -145,3 +145,6 @@ typings/
 
 # ETC
 .bak
+
+# NAVER_SECRET
+NaverSecret.*
